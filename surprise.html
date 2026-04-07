@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Special Message ❤️</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to top, #2c3e50, #4ca1af);
+            font-family: Arial;
+            overflow: hidden;
+        }
+
+        /* Center box */
+        .box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.85);
+            padding: 30px;
+            border-radius: 20px;
+            text-align: center;
+            width: 70%;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            z-index: 10;
+        }
+
+        h1 {
+            color: black;
+            font-weight: bold;
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: black;
+            font-weight: bold;
+        }
+
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+            bottom: -10px;
+            color: red;
+            font-size: 20px;
+            animation: floatUp linear infinite;
+            z-index: 30;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) scale(1.5);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box">
+        <h1>❤️ Dear Best Friend ❤️</h1>
+
+        <p>
+            Tum sirf meri friend nahi ho,  
+            tum meri life ki sabse achi aur trusted dost ho 🌸 <br><br>
+
+            Tumhare saath baat karna, hasna, sab kuch itna natural lagta hai,  
+            jaise hum dono ek dusre ko bina bole hi samajh lete hain 💫 <br><br>
+
+            Hamari dosti simple hai, lekin bahut special hai 💖  
+            Isme respect hai, trust hai, aur ek strong connection hai <br><br>
+
+            Mujhe accha lagta hai ki tum meri life ka hissa ho 😊  
+            Aur main hamesha chahta hoon ki hum dono aise hi ache dost bane rahe 💯 <br><br>
+
+            Thank you hamesha saath dene ke liye 🙏  
+            Tum jaisi dost milna sach me lucky baat hai ❤️✨ <br><br>
+
+            — Tumhara Dost
+        </p>
+    </div>
+
+    <script>
+        function createHeart() {
+            const heart = document.createElement("div");
+            heart.classList.add("heart");
+            heart.innerHTML = "❤️";
+
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (Math.random() * 20 + 10) + "px";
+            heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+</html>
